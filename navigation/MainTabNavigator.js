@@ -12,9 +12,16 @@ import CategoryScreen from "../screens/CategoryScreen";
 import OrdersScreen from "../screens/OrdersScreen";
 import MyPageScreen from "../screens/MyPageScreen";
 
+const defaultNavigationOptions = {
+  headerTintColor: 'white',
+  headerStyle: {
+    backgroundColor: 'skyblue',
+  },
+};
+
 const HomeStack = createStackNavigator({
   Home: HomeScreen
-});
+}, { defaultNavigationOptions });
 
 HomeStack.navigationOptions = {
   tabBarLabel: "Home",
@@ -32,7 +39,7 @@ HomeStack.navigationOptions = {
 
 const SearchStack = createStackNavigator({
   Search: SearchScreen
-});
+}, { defaultNavigationOptions });
 
 SearchStack.navigationOptions = {
   tabBarLabel: "Search",
@@ -46,7 +53,7 @@ SearchStack.navigationOptions = {
 
 const CategoryStack = createStackNavigator({
   Category: CategoryScreen
-});
+}, { defaultNavigationOptions });
 
 CategoryStack.navigationOptions = {
   tabBarLabel: "Category",
@@ -60,7 +67,7 @@ CategoryStack.navigationOptions = {
 
 const OrdersStack = createStackNavigator({
   Orders: OrdersScreen
-});
+}, { defaultNavigationOptions });
 
 OrdersStack.navigationOptions = {
   tabBarLabel: "Orders",
@@ -74,7 +81,7 @@ OrdersStack.navigationOptions = {
 
 const MyPageStack = createStackNavigator({
   MyPage: MyPageScreen
-});
+}, { defaultNavigationOptions });
 
 MyPageStack.navigationOptions = {
   tabBarLabel: "MyPage",

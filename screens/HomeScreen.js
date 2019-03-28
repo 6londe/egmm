@@ -1,37 +1,39 @@
 import React from "react";
 import { Image, Platform, ScrollView, StyleSheet, View } from "react-native";
 
+import MenuSection from "../components/MenuSection";
+import PurposeSection from "../components/PurposeSection";
+import RecommendationSection from "../components/RecommendationSection";
+import PopularSection from "../components/PopularSection";
+import EventSection from "../components/EventSection";
+
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    header: null
+    title: "LOGO",
   };
 
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.toolBar} />
         <ScrollView
           style={styles.container}
-          contentContainerStyle={styles.contentContainer}
-        >
-          <View style={styles.menuBar} />
+          contentContainerStyle={styles.contentContainer}>
+          
+          <MenuSection />
           <View style={styles.welcomeContainer}>
             <Image
-              source={
-                __DEV__
-                  ? require("../assets/images/robot-dev.png")
-                  : require("../assets/images/robot-prod.png")
-              }
-              style={styles.welcomeImage}
-            />
+              source={require("../assets/images/welcome.png")}
+              style={styles.welcomeImage} />
+          </View>
+          <PurposeSection />
+          <RecommendationSection />
+          <PopularSection />
+          <EventSection />
+
+          <View style={styles.tabBarInfoContainer}>
+            <View style={[styles.codeHighlightContainer, styles.navigationFilename]} />
           </View>
         </ScrollView>
-
-        <View style={styles.tabBarInfoContainer}>
-          <View
-            style={[styles.codeHighlightContainer, styles.navigationFilename]}
-          />
-        </View>
       </View>
     );
   }
@@ -40,28 +42,16 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff"
-  },
-  toolBar: {
-    height: 80
-  },
-  menuBar: {
-    height: 80
-  },
-  contentContainer: {
-    paddingTop: 30
+    backgroundColor: "#fff",
+    flexDirection: 'column',
   },
   welcomeContainer: {
-    alignItems: "center",
-    marginTop: 10,
-    marginBottom: 20
+    alignItems: "flex-start",
   },
   welcomeImage: {
-    width: 100,
-    height: 80,
-    resizeMode: "contain",
-    marginTop: 3,
-    marginLeft: -10
+    resizeMode: "stretch",
+    height: 250,
+    width: '100%',
   },
   tabBarInfoContainer: {
     position: "absolute",
@@ -73,17 +63,17 @@ const styles = StyleSheet.create({
         shadowColor: "black",
         shadowOffset: { height: -3 },
         shadowOpacity: 0.1,
-        shadowRadius: 3
+        shadowRadius: 3,
       },
       android: {
-        elevation: 20
+        elevation: 20,
       }
     }),
     alignItems: "center",
     backgroundColor: "#fbfbfb",
-    paddingVertical: 20
+    paddingVertical: 20,
   },
   navigationFilename: {
-    marginTop: 5
+    marginTop: 5,
   }
 });

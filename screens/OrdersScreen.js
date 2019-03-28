@@ -1,14 +1,16 @@
 import React from "react";
-import { ExpoConfigView } from "@expo/samples";
+import { View, Text, StyleSheet } from "react-native";
 
 export default class OrdersScreen extends React.Component {
   static navigationOptions = {
-    title: "app.json"
+    title: "Orders",
   };
 
   render() {
-    /* Go ahead and delete ExpoConfigView and replace it with your
-     * content, we just wanted to give you a quick view of your config */
-    return <ExpoConfigView />;
+    return (
+      <View>
+        <Text>OrdersScreen</Text>
+      </View>
+    );
   }
 }
