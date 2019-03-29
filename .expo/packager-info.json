@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 40385,
-  "expoServerNgrokUrl": "https://fk-3yk.anonymous.egmm.exp.direct",
-  "packagerNgrokUrl": "https://packager.fk-3yk.anonymous.egmm.exp.direct",
-  "ngrokPid": 40417
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": "https://rk-ig5.anonymous.egmm.exp.direct",
+  "packagerNgrokUrl": "https://packager.rk-ig5.anonymous.egmm.exp.direct",
+  "ngrokPid": 18252
 }

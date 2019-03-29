@@ -6,10 +6,11 @@ import PurposeSection from "../components/PurposeSection";
 import RecommendationSection from "../components/RecommendationSection";
 import PopularSection from "../components/PopularSection";
 import EventSection from "../components/EventSection";
+import SectionTitle from "../components/SectionTitle";
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: "LOGO",
+    title: "LOGO"
   };
 
   render() {
@@ -17,21 +18,30 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView
           style={styles.container}
-          contentContainerStyle={styles.contentContainer}>
-          
+          contentContainerStyle={styles.contentContainer}
+        >
           <MenuSection />
           <View style={styles.welcomeContainer}>
             <Image
               source={require("../assets/images/welcome.png")}
-              style={styles.welcomeImage} />
+              style={styles.welcomeImage}
+            />
           </View>
           <PurposeSection />
+
+          <SectionTitle name="MD's Recommendations" />
           <RecommendationSection />
+
+          <SectionTitle name="Popular Items" />
           <PopularSection />
+
+          <SectionTitle name="Events" />
           <EventSection />
 
           <View style={styles.tabBarInfoContainer}>
-            <View style={[styles.codeHighlightContainer, styles.navigationFilename]} />
+            <View
+              style={[styles.codeHighlightContainer, styles.navigationFilename]}
+            />
           </View>
         </ScrollView>
       </View>
@@ -43,15 +53,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    flexDirection: 'column',
+    flexDirection: "column"
   },
   welcomeContainer: {
-    alignItems: "flex-start",
+    alignItems: "flex-start"
   },
   welcomeImage: {
     resizeMode: "stretch",
     height: 250,
-    width: '100%',
+    width: "100%"
   },
   tabBarInfoContainer: {
     position: "absolute",
@@ -63,17 +73,17 @@ const styles = StyleSheet.create({
         shadowColor: "black",
         shadowOffset: { height: -3 },
         shadowOpacity: 0.1,
-        shadowRadius: 3,
+        shadowRadius: 3
       },
       android: {
-        elevation: 20,
+        elevation: 20
       }
     }),
     alignItems: "center",
     backgroundColor: "#fbfbfb",
-    paddingVertical: 20,
+    paddingVertical: 20
   },
   navigationFilename: {
-    marginTop: 5,
+    marginTop: 5
   }
 });
