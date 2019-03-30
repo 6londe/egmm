@@ -7,15 +7,10 @@ export default class RecommendationSection extends React.Component {
   render() {
     return (
       <View style={styles.recommendations}>
-        <ScrollView
-          horizontal={true}
-          style={styles.recommendation}
-          contentContainerStyle={styles.recommendationItem}
-          showsHorizontalScrollIndicator={false}
-        >
-          <RecommendationItem name="abc" price="123" />
-          <RecommendationItem name="abc" price="123" />
-          <RecommendationItem name="abc" price="123" />
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+          <RecommendationItem name="[에공이공방] 딸기비누 답례품" price="3,900원" />
+          <RecommendationItem name="[에공이공방] 사과비누 답례품" price="4,200원" />
+          <RecommendationItem name="[에공이공방] 바나나비누 답례품" price="5,600원" />
         </ScrollView>
       </View>
     );
@@ -24,7 +19,6 @@ export default class RecommendationSection extends React.Component {
 
 const styles = StyleSheet.create({
   recommendations: {
-    padding: 10,
-    height: 300
+    height: 300,
   }
 });

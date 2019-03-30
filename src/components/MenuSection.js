@@ -8,14 +8,17 @@ export default class MenuSection extends React.Component {
     return (
       <View style={styles.menuSection}>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          <MenuItem name="abcdefg" />
-          <MenuItem name="abcdefg" />
-          <MenuItem name="abcdefg" />
-          <MenuItem name="abcdefg" />
-          <MenuItem name="abcdefg" />
-          <MenuItem name="abcdefg" />
-          <MenuItem name="abcdefg" />
-          <MenuItem name="abcdefg" />
+          <MenuItem name="홈" />
+          <MenuItem name="베스트" />
+          <MenuItem name="신상품" />
+          <MenuItem name="실시간" />
+          <MenuItem name="할인" />
+          <MenuItem name="긴급" />
+          <MenuItem name="베스트" />
+          <MenuItem name="신상품" />
+          <MenuItem name="실시간" />
+          <MenuItem name="할인" />
+          <MenuItem name="긴급" />
         </ScrollView>
       </View>
     );
@@ -24,7 +27,7 @@ export default class MenuSection extends React.Component {
 
 const styles = StyleSheet.create({
   menuSection: {
-    height: 55,
+    height: 50,
     alignItems: "center"
   }
 });

@@ -1,50 +1,47 @@
 import React from "react";
-import { Image, Platform, ScrollView, StyleSheet, View } from "react-native";
+import { Platform, ScrollView, StyleSheet, View } from "react-native";
 
 import MenuSection from "../components/MenuSection";
 import PurposeSection from "../components/PurposeSection";
 import RecommendationSection from "../components/RecommendationSection";
 import PopularSection from "../components/PopularSection";
-import EventSection from "../components/EventSection";
 import SectionTitle from "../components/SectionTitle";
+import ImageSlider from "../components/ImageSlider";
+import EventSection from "../components/EventSection";
+import Divider from "../components/Divider";
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: "LOGO"
+    title: "에공"
   };
 
   render() {
     return (
-      <View style={styles.container}>
-        <ScrollView
-          style={styles.container}
-          contentContainerStyle={styles.contentContainer}
-        >
-          <MenuSection />
-          <View style={styles.welcomeContainer}>
-            <Image
-              source={require("../assets/images/welcome.png")}
-              style={styles.welcomeImage}
-            />
-          </View>
-          <PurposeSection />
+      <ScrollView style={styles.container}>
+        <MenuSection />
+        <ImageSlider 
+          dataSource={[
+            { url: require('../assets/images/example.png') },
+            { url: require("../assets/images/welcome.png") }
+          ]}
+        />
+        <Divider />
+        <PurposeSection />
 
-          <SectionTitle name="MD's Recommendations" />
-          <RecommendationSection />
+        <Divider />
+        <SectionTitle name="MD 추천" />
+        <RecommendationSection />
 
-          <SectionTitle name="Popular Items" />
-          <PopularSection />
+        <SectionTitle name="오늘의 인기 상품" />
+        <PopularSection />
 
-          <SectionTitle name="Events" />
-          <EventSection />
+        <SectionTitle name="이벤트" />
+        <EventSection />
 
-          <View style={styles.tabBarInfoContainer}>
-            <View
-              style={[styles.codeHighlightContainer, styles.navigationFilename]}
-            />
-          </View>
-        </ScrollView>
-      </View>
+        <View style={styles.tabBarInfoContainer}>
+          <View style={[styles.codeHighlightContainer, styles.navigationFilename]} />
+        </View>
+      </ScrollView>
     );
   }
 }
@@ -54,14 +51,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     flexDirection: "column"
-  },
-  welcomeContainer: {
-    alignItems: "flex-start"
-  },
-  welcomeImage: {
-    resizeMode: "stretch",
-    height: 250,
-    width: "100%"
   },
   tabBarInfoContainer: {
     position: "absolute",

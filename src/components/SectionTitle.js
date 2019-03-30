@@ -9,7 +9,12 @@ export default class SectionTitle extends React.Component {
 
 const styles = StyleSheet.create({
   sectionTitle: {
+    padding: 5,
+    marginLeft: 5,
+    marginTop: 10,
+    marginBottom: 5,
     fontSize: 20,
-    color: "grey"
+    color: "grey",
+    fontWeight: 'bold',
   }
 });

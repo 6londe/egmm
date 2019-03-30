@@ -8,13 +8,13 @@ export default class PurposeSection extends React.Component {
     return (
       <View style={styles.purposeSection}>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          <PurposeItem name="purpose" image="../assets/images/robot-dev.png" />
-          <PurposeItem name="purpose" image="../assets/images/robot-dev.png" />
-          <PurposeItem name="purpose" image="../assets/images/robot-dev.png" />
-          <PurposeItem name="purpose" image="../assets/images/robot-dev.png" />
-          <PurposeItem name="purpose" image="../assets/images/robot-dev.png" />
-          <PurposeItem name="purpose" image="../assets/images/robot-dev.png" />
-          <PurposeItem name="purpose" image="../assets/images/robot-dev.png" />
+          <PurposeItem name="결혼" image="../assets/images/robot-dev.png" />
+          <PurposeItem name="돌잔치" image="../assets/images/robot-dev.png" />
+          <PurposeItem name="아동" image="../assets/images/robot-dev.png" />
+          <PurposeItem name="환갑" image="../assets/images/robot-dev.png" />
+          <PurposeItem name="생일" image="../assets/images/robot-dev.png" />
+          <PurposeItem name="결혼" image="../assets/images/robot-dev.png" />
+          <PurposeItem name="돌잔치" image="../assets/images/robot-dev.png" />
         </ScrollView>
       </View>
     );
@@ -23,11 +23,8 @@ export default class PurposeSection extends React.Component {
 
 const styles = StyleSheet.create({
   purposeSection: {
-    height: 100,
-    flex: 1,
-    flexDirection: "row",
-    padding: 10,
-    marginTop: 10,
-    marginBottom: 10
+    height: 120,
+    marginTop: 5,
+    marginBottom: 5,
   }
 });

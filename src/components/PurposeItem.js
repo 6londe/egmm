@@ -6,9 +6,9 @@ export default class PurposeItem extends React.Component {
     return (
       <View style={styles.purposeItem}>
         <Image
-          source={require("../assets/images/welcome.png")}
+          source={require("../assets/images/circle.png")}
           style={styles.purposeImage} />
-          <Text style={styles.purposeText}>{this.props.name}</Text>
+        <Text style={styles.purposeText}>{this.props.name}</Text>
       </View>
     );
   }
@@ -16,17 +16,20 @@ export default class PurposeItem extends React.Component {
 
 const styles = StyleSheet.create({
   purposeItem: {
-    flex: 0.2,
     height: '100%',
     margin: 5,
+    flex: 1,
+    flexDirection: 'column',
   },
   purposeImage: {
-    height: '80%',
-    width: '100%',
-    resizeMode: "cover",
+    height: '75%',
+    width: 80,
+    resizeMode: "contain",
   },
   purposeText: {
-    alignSelf: 'center',
     margin: 5,
+    fontSize: 17,
+    color: 'grey',
+    alignSelf: 'center',
   },
 });

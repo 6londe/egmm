@@ -1,24 +1,24 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, Text } from "react-native";
 
 export default class MenuItem extends React.Component {
   render() {
     return (
-      <View style={styles.purposeItem}>
-        <Text style={styles.purposeText}>{this.props.name}</Text>
-      </View>
+      <Text style={styles.menuItem}>{this.props.name}</Text>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  purposeItem: {
+  menuItem: {
+    fontSize: 18,
+    color: 'grey',
     flex: 0.2,
     height: "100%",
-    margin: 5
-  },
-  purposeText: {
+    margin: 5,
+    paddingLeft: 5,
+    paddingRight: 5,
+    textAlignVertical: "center",
     alignSelf: "center",
-    margin: 5
-  }
+  },
 });
