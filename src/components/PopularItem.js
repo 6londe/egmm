@@ -10,14 +10,13 @@ export default class RecommendationItem extends React.Component {
          <View style={styles.popularItem}>
           <Image
             source={require("../assets/images/example.png")}
-           style={styles.popularImage} /> 
+            style={styles.popularImage} /> 
           <Text style={styles.popularTitle}>[에공이공방] 꽃하트비누</Text>   
           <View style={styles.popularInfo}>
             <Text style={styles.popularPrice}>7,400원</Text>
             <Text style={styles.popularRate}>★★★★★</Text>
           </View>
         </View>
-        
       </View>
     );
   }
@@ -25,11 +24,10 @@ export default class RecommendationItem extends React.Component {
 
 const styles = StyleSheet.create({
     popularContainer: {
-      height: '50%',
-      flexBasis: '50%',
+      flexBasis: width / 2 - 1,
+      padding: 3,
     },
     popularItem: {
-      margin: 2.5,
       borderWidth: 1,
       borderColor: 'lightgrey',
       borderStyle: 'solid',
@@ -37,15 +35,13 @@ const styles = StyleSheet.create({
     popularImage: {
       resizeMode: "cover",
       height: width / 2,
-      width: '100%',
-      marginBottom: 3,
+      width: "100%",
     },
     popularTitle: {
       fontSize: 18,
       padding: 2,
     },
     popularInfo: {
-      flexWrap: 'wrap',
       flexDirection: 'row',
     },
     popularPrice: {
@@ -57,7 +53,6 @@ const styles = StyleSheet.create({
     popularRate: {
       fontSize: 17,
       color: 'skyblue',
-      padding: 2,
     },
   });
   

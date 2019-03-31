@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image } from "react-native";
 
-export default class PurposeItem extends React.Component {
+export default class CircledItem extends React.Component {
   render() {
     return (
       <View style={styles.purposeItem}>

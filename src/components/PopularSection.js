@@ -9,7 +9,7 @@ const { width } = Dimensions.get('window');
 export default class PopularSection extends React.Component {
   render() {
     return (
-      <View style={styles.popularSection}>
+      <View>
         <SectionTitle name="오늘의 인기 상품" />
         <View style={styles.popularContainer}>
           <PopularItem />
@@ -23,9 +23,6 @@ export default class PopularSection extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  popularSection: {
-    height: width + 172,
-  },
   popularContainer: {
     flex: 1,
     flexDirection: 'row',

@@ -1,71 +1,72 @@
 import React from "react";
-import { Platform, ScrollView, StyleSheet, View } from "react-native";
+import { StyleSheet } from "react-native";
+import { TabView, TabBar,SceneMap } from 'react-native-tab-view';
 
-import MenuSection from "../components/MenuSection";
-import PurposeSection from "../components/PurposeSection";
-import RecommendationSection from "../components/RecommendationSection";
-import PopularSection from "../components/PopularSection";
-import ImageSlider from "../components/ImageSlider";
-import EventSection from "../components/EventSection";
+import HomeTab from "../tabs/HomeTab";
+import BestTab from "../tabs/BestTab";
+import NewTab from "../tabs/NewTab";
+import NowTab from "../tabs/NowTab";
+import SaleTab from "../tabs/SaleTab";
+import EventTab from "../tabs/EventTab";
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: "에공"
+    title: "에공이"
   };
+
+  state = {
+    index: 0,
+    routes: [
+      { key: 'home', title: '홈' },
+      { key: 'best', title: '베스트' },
+      { key: 'new', title: '신상품' },
+      { key: 'now', title: '실시간' },
+      { key: 'sale', title: '할인' },
+      { key: 'event', title: '이벤트' },
+    ],
+  };
+
+  _handleIndexChange = index => this.setState({ index });
+
+  _renderTabBar = props => {
+    return (
+      <TabBar
+        {...props}
+        style={styles.tabBar}
+        activeColor='skyblue'
+        inactiveColor='grey'
+        indicatorStyle={styles.tabBarIndicator}
+        renderIcon={this._renderIcon}
+      />
+    );
+  };
+
+  _renderScene = SceneMap({
+    home: HomeTab,
+    best: BestTab,
+    new: NewTab,
+    now: NowTab,
+    sale: SaleTab,
+    event: EventTab,
+  });
 
   render() {
     return (
-      <ScrollView style={styles.container}>
-        <MenuSection />
-        <ImageSlider 
-          dataSource={[
-            { url: require('../assets/images/example.png') },
-            { url: require("../assets/images/welcome.png") }
-          ]}
-        />
-        <PurposeSection />
-
-        <RecommendationSection />
-
-        <PopularSection />
-
-        <EventSection />
-
-        <View style={styles.tabBarInfoContainer}>
-          <View style={[styles.codeHighlightContainer, styles.navigationFilename]} />
-        </View>
-      </ScrollView>
+      <TabView
+        navigationState={this.state}
+        renderScene={this._renderScene}
+        renderTabBar={this._renderTabBar}
+        onIndexChange={this._handleIndexChange}
+      />
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    flexDirection: "column"
+  tabBar: {
+    backgroundColor: 'white',
   },
-  tabBarInfoContainer: {
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    right: 0,
-    ...Platform.select({
-      ios: {
-        shadowColor: "black",
-        shadowOffset: { height: -3 },
-        shadowOpacity: 0.1,
-        shadowRadius: 3
-      },
-      android: {
-        elevation: 20
-      }
-    }),
-    alignItems: "center",
-    backgroundColor: "#fbfbfb",
-    paddingVertical: 20
+  tabBarIndicator: {
+    backgroundColor: 'skyblue',
   },
-  navigationFilename: {
-    marginTop: 5
-  }
 });
