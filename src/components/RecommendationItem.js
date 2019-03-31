@@ -17,9 +17,11 @@ export default class RecommendationItem extends React.Component {
 
 const styles = StyleSheet.create({
   recommendationItem: {
+    /*
     borderWidth: 1,
     borderColor: 'lightgrey',
     borderStyle: 'solid',
+    */
     height: '100%',
     marginLeft: 3,
     marginRight: 3,

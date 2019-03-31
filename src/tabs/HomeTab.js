@@ -7,6 +7,7 @@ import PopularSection from "../components/PopularSection";
 import ImageSlider from "../components/ImageSlider";
 import EventSection from "../components/EventSection";
 import Divider from "../components/Divider";
+import SectionTitle from "../components/SectionTitle";
 
 export default class HomeTab extends React.Component {
 
@@ -21,9 +22,10 @@ export default class HomeTab extends React.Component {
         />
         <Divider />
         <CircledMenu />
-
+        
         <RecommendationSection />
 
+        <SectionTitle name="오늘의 인기 상품" />
         <PopularSection />
 
         <EventSection />
@@ -60,7 +62,6 @@ const styles = StyleSheet.create({
     }),
     alignItems: "center",
     backgroundColor: "#fbfbfb",
-    paddingVertical: 20
   },
   navigationFilename: {
     marginTop: 5

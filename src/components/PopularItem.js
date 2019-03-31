@@ -28,9 +28,11 @@ const styles = StyleSheet.create({
       padding: 3,
     },
     popularItem: {
+      /*
       borderWidth: 1,
       borderColor: 'lightgrey',
       borderStyle: 'solid',
+      */
     },
     popularImage: {
       resizeMode: "cover",
